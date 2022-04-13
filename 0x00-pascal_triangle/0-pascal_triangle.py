@@ -6,12 +6,11 @@
 
 def pascal_triangle(n):
     """Generates the Pascal's triangle numbers up to n.
-
         Args:
             n (int): The final row number to generate Pascal's Triangle.
-
         Returns:
-            :obj:`list` of :obj:`list` of :obj: `int`: Pascal's Triangle finished.
+            :obj:`list` of :obj:`list` of :obj: `int`: Pascal's Triangle
+            finished.
     """
     if n <= 0:
         return []
