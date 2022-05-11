@@ -14,10 +14,8 @@ def minOperations(n):
        Returns:
            int: The minimum number of operations. 0 if impossible.
     """
-    if n < 1:
+    if n < 2 or type(n) is not int:
         return 0
-    elif n == 1:
-        return 1
 
     answer = 0
     sqrt_n = math.sqrt(n)
