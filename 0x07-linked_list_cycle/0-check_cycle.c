@@ -10,7 +10,7 @@ int check_cycle(listint_t *list)
 {
 	listint_t *uro, *boros;
 
-	if (list == NULL)
+	if (!list)
 		return (0);
 
 	uro = list;
