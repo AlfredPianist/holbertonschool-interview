@@ -16,15 +16,12 @@ int check_cycle(listint_t *list)
 	uro = list;
 	boros = list;
 
-	while (1)
+	while (uro && uro->next)
 	{
-		if (uro == NULL || uro->next == NULL)
-			return (0);
 		uro = uro->next->next;
 		boros = boros->next;
 		if (uro == boros)
-			break;
+			return (1);
 	}
-
-	return (1);
+	return (0);
 }
