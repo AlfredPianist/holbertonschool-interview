@@ -1,12 +1,14 @@
+### Extensionless ###
+*
+!*/
+!*.*
+!.gitignore
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
-*.so
-insert.dSYM/
 
 # Distribution / packaging
 .Python
@@ -200,6 +202,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# VSCode specifics and formatting
+### VSCode ###
 .vscode
 .prettierrc
+
+### C ###
+*.so
+*.dSYM/
