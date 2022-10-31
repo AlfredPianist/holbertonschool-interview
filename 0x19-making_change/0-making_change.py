@@ -26,6 +26,7 @@ def makeChange(coins, total):
     inf = sys.maxsize
     combinations_array = [inf for idx in range(total + 1)]
     combinations_array[0] = 0
+    coins.sort()
 
     for i in range(1, total + 1):
         for coin in coins:
