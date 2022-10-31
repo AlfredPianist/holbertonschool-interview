@@ -5,7 +5,7 @@ Given a pile of coins of different values,
 determine the fewest number of coins needed to
 meet a given amount total
 """
-import sys
+from collections import deque
 
 
 def makeChange(coins, total):
@@ -19,21 +19,23 @@ def makeChange(coins, total):
         - The value of a coin will always be an integer greater than 0
         - You can assume you have an infinite number of each denomination of
         coin in the list
+    Using a Breadth-First Search top-down approach.
     """
     if total <= 0:
         return 0
 
-    inf = sys.maxsize
-    combinations_array = [inf for idx in range(total + 1)]
-    combinations_array[0] = 0
-    coins.sort()
+    memo = set()
+    tree_queue = deque([[0, 0]])
 
-    for i in range(1, total + 1):
+    while tree_queue:
+        current, level = tree_queue.popleft()
+
+        if level != 0 and current == total:
+            return level
+
         for coin in coins:
-            if coin <= i:
-                combinations_array[i] = min(combinations_array[i],
-                                            combinations_array[i - coin] + 1)
+            if current + coin not in memo and current + coin <= total:
+                tree_queue.append([current + coin, level + 1])
+                memo.add(current + coin)
 
-    if combinations_array[total] == inf:
-        return -1
-    return combinations_array[total]
+    return -1
