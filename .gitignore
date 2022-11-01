@@ -209,3 +209,4 @@ Temporary Items
 ### C ###
 *.so
 *.dSYM/
+*.out
