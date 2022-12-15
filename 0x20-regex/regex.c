@@ -13,7 +13,7 @@ int regex_match(char const *str, char const *pattern)
 
 	if (!(str && pattern))
 		return (0);
-	
+
 	dot = *str && ((*pattern == '.') || (*str == *pattern));
 	star = *(pattern + 1) == '*';
 
@@ -30,4 +30,3 @@ int regex_match(char const *str, char const *pattern)
 		return (regex_match(str + 1, pattern + 1));
 	return (0);
 }
-
