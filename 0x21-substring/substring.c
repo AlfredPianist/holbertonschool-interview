@@ -10,7 +10,6 @@
  * @n: pointer where number of elements in returned array is stored
  * Return: an array storing each index in `s` at which a substring was found.
  *         If no solution is found, `NULL` can be returned.
-
  */
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
